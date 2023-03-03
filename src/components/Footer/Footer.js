@@ -9,7 +9,10 @@ const Footer = () => {
         top="500"
         width="40"
         height="18"
-        style={{ background: "#ffa500", borderRadius: "100%" }}
+        style={{
+          background: "#ffa500",
+          borderRadius: "100%",
+        }}
       />
       <div className="w-[90%] xl:w-[1280px] mx-auto footer ">
         <div>
