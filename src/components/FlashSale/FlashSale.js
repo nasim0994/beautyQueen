@@ -1,6 +1,7 @@
 import React from "react";
 import { MdKeyboardArrowRight } from "react-icons/md";
 import ProductCard from "../ProductCard/ProductCard";
+import flashSaleProducts from "../../Data/flashSaleProducts";
 
 const FlashSale = () => {
   return (
@@ -38,11 +39,9 @@ const FlashSale = () => {
 
         {/* Product Card */}
         <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-2 mt-2">
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
+          {flashSaleProducts?.map((product, i) => (
+            <ProductCard key={i} product={product} />
+          ))}
         </div>
       </div>
     </div>
