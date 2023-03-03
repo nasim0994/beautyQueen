@@ -11,17 +11,15 @@ const FlashSale = () => {
   return (
     <div className="mt-10">
       <div className="w-[90%] xl:w-[1280px] mx-auto bg-base-100 p-4 rounded-lg shadow-lg">
-        <div className="flex justify-between items-center border-b pb-4 border-primary">
+        <div className="flex justify-between sm:items-center border-b pb-4 border-primary">
           <div className="sm:flex gap-8 items-center">
-            <h1 className="text-xl font-semibold text-secondary">FlashSale</h1>
+            <h1 className="sm:text-xl font-semibold text-secondary mb-2 sm:mb-0">
+              FlashSale
+            </h1>
 
-            <div className="flex gap-2 items-center">
+            <div className="w-max flex gap-2 items-center">
               <p className="text-primary">End in</p>
               <div className="flex gap-2 items-center">
-                <span className="bg-primary w-8 h-8 flex justify-center items-center text-base-100 rounded">
-                  {days}
-                </span>
-                <span>:</span>
                 <span className="bg-primary w-8 h-8 flex justify-center items-center text-base-100 rounded">
                   {hours}
                 </span>
@@ -38,7 +36,7 @@ const FlashSale = () => {
           </div>
 
           <div>
-            <button className="flex items-center text-primary font-semibold hover-go ">
+            <button className="w-max flex items-center text-primary font-semibold hover-go">
               <h1>Shop More</h1>
               <MdKeyboardArrowRight className="text-[22px] pt-px duration-200" />
             </button>
