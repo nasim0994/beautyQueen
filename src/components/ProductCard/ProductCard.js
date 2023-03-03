@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { FaStar, FaStarHalfAlt } from "react-icons/fa";
+import { FiHeart } from "react-icons/fi";
 
 const ProductCard = ({ product }) => {
   const { image, title, price, discount, rating } = product;
@@ -40,7 +41,13 @@ const ProductCard = ({ product }) => {
             <del className="text-neutral/70 text-sm ">৳{price}</del>
           </div>
 
-          <div className="flex text-sm mt-1">{ratingStar}</div>
+          <div className="flex justify-between items-center">
+            <div className="flex text-sm mt-1">{ratingStar}</div>
+
+            <button className="text-xl hover:text-primary duration-300">
+              <FiHeart />
+            </button>
+          </div>
         </div>
       </Link>
     </div>

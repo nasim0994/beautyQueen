@@ -33,7 +33,7 @@ const categoryData = [
           },
           {
             id: 1.13,
-            title: "Pant",
+            title: "Pant & Pajama",
             link: "/",
           },
         ],
@@ -54,7 +54,7 @@ const categoryData = [
           },
           {
             id: 1.23,
-            title: "Ator",
+            title: "Pant & Pajama",
             link: "/",
           },
         ],
@@ -70,7 +70,7 @@ const categoryData = [
           },
           {
             id: 1.32,
-            title: "Tupi",
+            title: "Pant & Pajama",
             link: "/",
           },
         ],
@@ -91,7 +91,7 @@ const categoryData = [
           },
           {
             id: 1.43,
-            title: "Ator",
+            title: "Pant & Pajama",
             link: "/",
           },
         ],
