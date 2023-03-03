@@ -1,6 +1,7 @@
 const flashSaleProducts = [
   {
-    image: "http://localhost:3000/static/media/olevs.298cd43ed0c5090facc5.jpg",
+    image:
+      "https://static-01.daraz.com.bd/p/a68cfa405b506a66d9d9a08a67103852.jpg",
     title: "Oleves Watch",
     price: 1500,
     discount: 10,

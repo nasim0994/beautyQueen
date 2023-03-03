@@ -2,8 +2,12 @@ import React from "react";
 import { MdKeyboardArrowRight } from "react-icons/md";
 import ProductCard from "../ProductCard/ProductCard";
 import flashSaleProducts from "../../Data/flashSaleProducts";
+import { useReactCountdown } from "use-react-countdown";
 
 const FlashSale = () => {
+  let dateToEndCountdownAt = "mar 10, 2023 12:00:00";
+  const { days, hours, minutes, seconds } =
+    useReactCountdown(dateToEndCountdownAt);
   return (
     <div className="mt-10">
       <div className="w-[90%] xl:w-[1280px] mx-auto bg-base-100 p-4 rounded-lg shadow-lg">
@@ -15,15 +19,19 @@ const FlashSale = () => {
               <p className="text-primary">End in</p>
               <div className="flex gap-2 items-center">
                 <span className="bg-primary w-8 h-8 flex justify-center items-center text-base-100 rounded">
-                  10
+                  {days}
                 </span>
                 <span>:</span>
                 <span className="bg-primary w-8 h-8 flex justify-center items-center text-base-100 rounded">
-                  25
+                  {hours}
                 </span>
                 <span>:</span>
                 <span className="bg-primary w-8 h-8 flex justify-center items-center text-base-100 rounded">
-                  15
+                  {minutes}
+                </span>
+                <span>:</span>
+                <span className="bg-primary w-8 h-8 flex justify-center items-center text-base-100 rounded">
+                  {seconds}
                 </span>
               </div>
             </div>
