@@ -42,7 +42,7 @@ const MainHeader = () => {
             >
               <div className="relative ">
                 <RiShoppingCartLine className="text-2xl" />
-                <div className="absolute inline-flex items-center justify-center w-5 h-5 text-xs font-bold bg-primary text-base-100 border-base-100 rounded-full -top-3 -right-3">
+                <div className="absolute flex items-center justify-center w-5 h-5 text-xs font-bold bg-primary text-base-100 border-base-100 rounded-full -top-3 -right-3">
                   8
                 </div>
               </div>

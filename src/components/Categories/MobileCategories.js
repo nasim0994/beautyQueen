@@ -14,7 +14,10 @@ const MobileCategories = () => {
 
         <ul className="flex overflow-x-auto">
           {categoryData.map((item) => (
-            <li className="flex flex-col items-center text-center border p-2 rounded mr-2">
+            <li
+              key={item.id}
+              className="flex flex-col items-center text-center border p-2 rounded mr-2"
+            >
               <img src={item.icon} alt="" className="w-8" />
               <Link className="w-24 text-sm">{item.title}</Link>
             </li>

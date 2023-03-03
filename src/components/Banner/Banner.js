@@ -4,7 +4,7 @@ import "swiper/swiper.min.css";
 import { Autoplay } from "swiper";
 import banner1 from "../../Images/banner1.png";
 import banner2 from "../../Images/banner2.avif";
-import banner3 from "../../Images/banner3.jpg";
+import banner3 from "../../Images/banner3.png";
 
 import Categories from "../Categories/Categories";
 import MobileCategories from "../Categories/MobileCategories";
@@ -15,7 +15,7 @@ const Banner = () => {
       className="bg-[url('https://tailwindmaxui.netlify.app/static/media/installation.50c59fdd.9713bc44d9403301b053.jpg')] bg-no-repeat bg-cover py-2 lg:h-max"
       id="banner"
     >
-      <div className="w-[90] xl:w-[1280px] mx-auto h-full">
+      <div className="w-[90] xl:w-[1280px] mx-auto h-[420px]">
         <div className="lg:flex flex-row-reverse gap-4 h-full">
           {/* Slider */}
           <div className="lg:w-[75%] xl:w-[80%]">

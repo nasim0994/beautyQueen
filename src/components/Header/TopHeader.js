@@ -24,7 +24,7 @@ const TopHeader = () => {
               className="flex items-center gap-2 hover:text-primary duration-300"
             >
               <MdOutlineMail className="text-base" />
-              <p>suport@pmall.com</p>
+              <p>suport@emall.com</p>
             </Link>
           </div>
           <div className="flex items-center gap-6">

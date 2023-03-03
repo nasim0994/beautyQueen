@@ -8,7 +8,7 @@ const FlashSale = () => {
       <div className="w-[90%] xl:w-[1280px] mx-auto bg-base-100 p-4 rounded-lg shadow-lg">
         <div className="flex justify-between items-center border-b pb-4 border-primary">
           <div className="sm:flex gap-8 items-center">
-            <h1 className="text-xl font-semibold text-neutral">FlashSale</h1>
+            <h1 className="text-xl font-semibold text-secondary">FlashSale</h1>
 
             <div className="flex gap-2 items-center">
               <p className="text-primary">End in</p>
