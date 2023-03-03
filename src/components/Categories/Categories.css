@@ -1,0 +1,20 @@
+.dropdownMenu {
+  position: absolute;
+  top: 0;
+  background: #fff;
+  width: max-content;
+  left: 100%;
+  border-radius: 5px;
+  padding: 10px 20px;
+
+  transform: translateY(15px);
+  visibility: hidden;
+  opacity: 0;
+
+  transition: transform 0.3s;
+}
+.categories ul li:hover .dropdownMenu {
+  transform: translateY(0px);
+  visibility: visible;
+  opacity: 1;
+}
