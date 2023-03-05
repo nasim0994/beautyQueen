@@ -6,7 +6,7 @@ import { BiCategory } from "react-icons/bi";
 const MobileCategories = () => {
   return (
     <div className="py-3">
-      <div className="w-[90%] mx-auto">
+      <div className="w-[95%] mx-auto">
         <div className="flex gap-1 items-center text-center pr-4 mb-3">
           <BiCategory className="text-primary text-xl" />
           <h1 className="font-semibold">Categories</h1>

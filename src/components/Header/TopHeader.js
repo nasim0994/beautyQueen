@@ -8,7 +8,7 @@ import { AiOutlineLogin } from "react-icons/ai";
 const TopHeader = () => {
   return (
     <div className="hidden lg:block py-2 border-b bg-gray-50">
-      <div className="w-[90%] xl:w-[1280px] mx-auto text-neutral">
+      <div className="w-[95%] xl:w-[1280px] mx-auto text-neutral">
         <div className="flex justify-between items-center text-sm">
           <div className="flex items-center">
             <Link
@@ -28,13 +28,6 @@ const TopHeader = () => {
             </Link>
           </div>
           <div className="flex items-center gap-6">
-            <Link
-              to="mailto: abc@example.com"
-              className="flex items-center gap-1 hover:text-primary duration-300"
-            >
-              <BsPerson className="text-base" />
-              <p className="pt-1">Become a Merchant</p>
-            </Link>
             <Link
               to="mailto: abc@example.com"
               className="flex items-center gap-1 hover:text-primary duration-300"

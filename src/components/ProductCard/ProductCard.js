@@ -22,7 +22,7 @@ const ProductCard = ({ product }) => {
     );
   });
   return (
-    <div className="mt-4 hover:shadow-lg rounded overflow-hidden product-card duration-300">
+    <div className="bg-base-100 mt-4 hover:shadow-lg rounded overflow-hidden product-card duration-300">
       <Link to="">
         <div className="overflow-hidden relative">
           <img src={image} alt="" className="w-full h-60 duration-500" />
@@ -34,17 +34,17 @@ const ProductCard = ({ product }) => {
           )}
         </div>
         <div className="p-2">
-          <h1 className="text-lg font-semibold mb-1">{title}</h1>
+          <h1 className="sm:text-lg font-semibold mb-1">{title}</h1>
           <div className="flex items-center gap-2">
-            <p className="text-primary text-lg">৳{newPrice}</p>
+            <p className="text-primary sm:text-lg">৳{newPrice}</p>
 
-            <del className="text-neutral/70 text-sm ">৳{price}</del>
+            <del className="text-neutral/70 text-sm">৳{price}</del>
           </div>
 
-          <div className="flex justify-between items-center">
-            <div className="flex text-sm mt-1">{ratingStar}</div>
+          <div className="flex justify-between items-center mt-">
+            <div className="flex text-sm sm:mt-1">{ratingStar}</div>
 
-            <button className="text-xl hover:text-primary duration-300">
+            <button className="sm:text-xl hover:text-primary duration-300">
               <FiHeart />
             </button>
           </div>

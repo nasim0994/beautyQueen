@@ -6,15 +6,15 @@ const Footer = () => {
     <footer className="mt-10 p-10 bg-neutral text-neutral-content">
       <ScrollToTop
         smooth
-        top="500"
+        top="800"
         width="40"
         height="18"
         style={{
-          background: "#ffa500",
+          background: "#FC3078",
           borderRadius: "100%",
         }}
       />
-      <div className="w-[90%] xl:w-[1280px] mx-auto footer ">
+      <div className="w-[95%] xl:w-[1280px] mx-auto footer ">
         <div>
           <span className="footer-title">Services</span>
           <a className="link link-hover">Branding</a>

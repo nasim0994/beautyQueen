@@ -8,11 +8,11 @@ import { FiHeart } from "react-icons/fi";
 const MainHeader = () => {
   return (
     <div className="py-2 text-neutral shadow sticky top-0 z-50 lg:bg-[#ffffffcc] lg:backdrop-blur-[30px] backdrop-saturate-[200%]">
-      <div className="w-[90%] xl:w-[1280px] mx-auto">
+      <div className="w-[95%] xl:w-[1280px] mx-auto">
         <div className="flex items-center justify-between">
           <div className="hidden lg:block">
             <Link to="/">
-              <img src={logo} alt="" className="w-32" />
+              <img src={logo} alt="" className="w-48" />
             </Link>
           </div>
           <div className="w-full lg:w-3/5">

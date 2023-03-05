@@ -40,3 +40,7 @@ h1 {
     right: 15px !important;
   }
 }
+
+.active {
+  color: #ff9a21;
+}

@@ -10,7 +10,7 @@ const FlashSale = () => {
     useReactCountdown(dateToEndCountdownAt);
   return (
     <div className="mt-10">
-      <div className="w-[90%] xl:w-[1280px] mx-auto bg-base-100 p-4 rounded-lg shadow-lg">
+      <div className="w-[95%] xl:w-[1280px] mx-auto sm:bg-base-100 sm:p-4 rounded-lg sm:shadow-lg">
         <div className="flex justify-between sm:items-center border-b pb-4 border-primary">
           <div className="sm:flex gap-8 items-center">
             <h1 className="sm:text-xl font-semibold text-secondary mb-2 sm:mb-0">
@@ -44,7 +44,7 @@ const FlashSale = () => {
         </div>
 
         {/* Product Card */}
-        <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-2 mt-2">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-2 mt-2">
           {flashSaleProducts?.map((product, i) => (
             <ProductCard key={i} product={product} />
           ))}
