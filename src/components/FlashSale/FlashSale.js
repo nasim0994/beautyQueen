@@ -3,11 +3,14 @@ import { MdKeyboardArrowRight } from "react-icons/md";
 import ProductCard from "../ProductCard/ProductCard";
 import flashSaleProducts from "../../Data/flashSaleProducts";
 import { useReactCountdown } from "use-react-countdown";
+import { UseContext } from "../../ContextApi/ContextProvider";
 
 const FlashSale = () => {
   let dateToEndCountdownAt = "mar 10, 2023 12:00:00";
   const { days, hours, minutes, seconds } =
     useReactCountdown(dateToEndCountdownAt);
+
+  const { homeProducts, isLoading } = UseContext();
   return (
     <div className="mt-10">
       <div className="w-[95%] xl:w-[1280px] mx-auto sm:bg-base-100 sm:p-4 rounded-lg sm:shadow-lg">
@@ -45,8 +48,9 @@ const FlashSale = () => {
 
         {/* Product Card */}
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-2 mt-2">
-          {flashSaleProducts?.map((product, i) => (
-            <ProductCard key={i} product={product} />
+          {isLoading && <h1>Loading...</h1>}
+          {homeProducts.products?.map((product) => (
+            <ProductCard key={product.id} product={product} />
           ))}
         </div>
       </div>

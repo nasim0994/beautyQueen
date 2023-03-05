@@ -3,10 +3,13 @@ import { MdKeyboardArrowRight } from "react-icons/md";
 import ProductCard from "../ProductCard/ProductCard";
 import popularProducts from "../../Data/popularProducts";
 import { useReactCountdown } from "use-react-countdown";
+import { UseContext } from "../../ContextApi/ContextProvider";
 
 const PopularProduct = () => {
   let dateToEndCountdownAt = "mar 03, 2023 22:59:59";
   const { hours, minutes, seconds } = useReactCountdown(dateToEndCountdownAt);
+
+  const { homeProducts, isLoading } = UseContext();
 
   return (
     <div className="mt-10">
@@ -45,8 +48,9 @@ const PopularProduct = () => {
 
         {/* Product Card */}
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-2 mt-2">
-          {popularProducts.map((product, i) => (
-            <ProductCard key={i} product={product} />
+          {isLoading && <h1>Loading...</h1>}
+          {homeProducts.products?.map((product) => (
+            <ProductCard key={product.id} product={product} />
           ))}
         </div>
       </div>
