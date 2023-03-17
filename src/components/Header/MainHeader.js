@@ -9,11 +9,14 @@ import { UseContext } from "../../ContextApi/ContextProvider";
 const MainHeader = () => {
   const { cart } = UseContext();
   const subTotal = cart?.reduce(
-    (price, item) => price + item.quantity * parseInt(item.price),
+    (price, item) =>
+      price +
+      item.quantity *
+        parseInt(item.price - (item.price * item.discountPercentage) / 100),
     0
   );
   return (
-    <div className="py-2 text-neutral shadow sticky top-0 z-50 lg:bg-[#ffffffcc] lg:backdrop-blur-[30px] backdrop-saturate-[200%]">
+    <div className="py-2 text-neutral shadow sticky top-0 z-40 lg:bg-[#ffffffcc] lg:backdrop-blur-[30px] backdrop-saturate-[200%]">
       <div className="w-[95%] xl:w-[1280px] mx-auto">
         <div className="flex items-center justify-between">
           <div className="hidden lg:block">
@@ -35,11 +38,11 @@ const MainHeader = () => {
           </div>
           <div className="hidden lg:flex gap-6 items-center">
             <Link
-              to=""
+              to="/account/wishlist"
               className="flex gap-1 items-center text-neutral hover:text-primary duration-300"
             >
               <FiHeart className="text-xl" />
-              <p>wishlist</p>
+              <h1 className="font-medium">wishlist</h1>
             </Link>
 
             <Link

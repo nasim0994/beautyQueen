@@ -13,12 +13,12 @@ const MobileHeader = () => {
           <h1>Home</h1>
         </NavLink>
 
-        <NavLink to="cart" className="flex flex-col items-center">
+        <NavLink to="/cart" className="flex flex-col items-center">
           <FaShoppingCart className="text-xl" />
           <h1>Cart</h1>
         </NavLink>
 
-        <NavLink to="account" className="flex flex-col items-center">
+        <NavLink to="/account" className="flex flex-col items-center">
           <MdAccountCircle className="text-2xl" />
           <h1>Account</h1>
         </NavLink>

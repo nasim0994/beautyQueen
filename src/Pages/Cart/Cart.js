@@ -5,6 +5,7 @@ import CartDetails from "./CartDetails/CartDetails";
 import { UseContext } from "../../ContextApi/ContextProvider";
 
 const Cart = () => {
+  window.scroll(0, 0);
   const { cart } = UseContext();
 
   return (
@@ -21,10 +22,10 @@ const Cart = () => {
                 <thead className="uppercase border-b">
                   <tr>
                     <th className="px-6 py-3">Product</th>
-                    <th className="px-6 py-3 text-center">Price</th>
-                    <th className="px-6 py-3 text-center">QUANTITY</th>
-                    <th className="px-6 py-3 text-center">Total</th>
-                    <th className="px-6 py-3 text-center">Action</th>
+                    <th className="px-6 py-3">Price</th>
+                    <th className="px-6 py-3">QUANTITY</th>
+                    <th className="px-6 py-3">Total</th>
+                    <th className="px-6 py-3">Action</th>
                   </tr>
                 </thead>
                 <tbody>

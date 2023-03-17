@@ -24,7 +24,7 @@ const ProductCard = ({ product }) => {
           <img
             src={thumbnail}
             alt=""
-            className="w-full h-52 sm:h-60 duration-500"
+            className="w-full h-48 sm:h-56 duration-500"
           />
           {/* Discount */}
           <div className="absolute top-1 text-base-100 right-0 bg-red-600 w-max rounded-l-full px-2 py-px">

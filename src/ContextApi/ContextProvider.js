@@ -2,10 +2,19 @@ import React, { createContext, useContext, useEffect, useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { toast } from "react-toastify";
 
+import categories from "../Data/categoryData";
+
 export const Context = createContext();
 
 const ContextProvider = ({ children }) => {
   const { data: homeProducts = [], isLoading } = useQuery({
+    queryKey: [""],
+    queryFn: () =>
+      fetch(`https://dummyjson.com/products?limit=10`).then((res) =>
+        res.json()
+      ),
+  });
+  const { data: flashAndPopularProducts = [] } = useQuery({
     queryKey: ["relatedProducts"],
     queryFn: () =>
       fetch(`https://dummyjson.com/products?limit=5`).then((res) => res.json()),
@@ -84,16 +93,47 @@ const ContextProvider = ({ children }) => {
     const existed = wishlist.find((item) => item.id == product.id);
     if (!existed) {
       setWishtlist([...wishlist, product]);
-      toast.success("Add to Wishlist", {
-        position: "top-center",
-        autoClose: 1000,
-      });
     } else {
       const newWishlist = wishlist.filter(
         (wishlistProduct) => wishlistProduct.id !== product.id
       );
       setWishtlist(newWishlist);
-      toast.error("Delete to Wishlist", {
+    }
+  };
+
+  const handelAddToCartFromWishlist = (product) => {
+    const existed = cart?.find((item) => item.id === product.id);
+    if (!existed) {
+      setCart([...cart, { ...product, quantity: 1 }]);
+
+      toast.success("Add to Cart Success", {
+        position: "top-center",
+        autoClose: 1000,
+      });
+    } else {
+      toast.warning("Already Add To Cart", {
+        position: "top-center",
+        autoClose: 1000,
+      });
+    }
+  };
+
+  const handelAddToCartAndDeleteWishlist = (product) => {
+    const existed = cart?.find((item) => item.id === product.id);
+    if (!existed) {
+      setCart([...cart, { ...product, quantity: 1 }]);
+
+      const newWishlist = wishlist.filter(
+        (wishlistProduct) => wishlistProduct.id !== product.id
+      );
+      setWishtlist(newWishlist);
+
+      toast.success("Add to Cart Success", {
+        position: "top-center",
+        autoClose: 1000,
+      });
+    } else {
+      toast.warning("Already Add To Cart", {
         position: "top-center",
         autoClose: 1000,
       });
@@ -112,13 +152,17 @@ const ContextProvider = ({ children }) => {
   };
 
   const contextInfo = {
+    categories,
     homeProducts,
+    flashAndPopularProducts,
     isLoading,
     handelAddToCart,
     handelIncreaseCart,
     handelDecreaseCart,
     handelDeleteCart,
     handelAddWishlist,
+    handelAddToCartFromWishlist,
+    handelAddToCartAndDeleteWishlist,
     handelDeleteWishlist,
     cart,
     wishlist,

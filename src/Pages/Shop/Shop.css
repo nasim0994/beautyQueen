@@ -1,0 +1,17 @@
+.shopCategories::-webkit-scrollbar {
+  width: 4px;
+}
+.shopCategories::-webkit-scrollbar-thumb {
+  background: #ddd;
+}
+
+.shopDropdown {
+  max-height: 0px;
+  overflow: hidden;
+
+  transition: max-height 0.5s;
+}
+
+.shopDropdown-show {
+  max-height: 1000px;
+}

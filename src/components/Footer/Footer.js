@@ -6,11 +6,12 @@ const Footer = () => {
     <footer className="mt-10 p-10 bg-neutral text-neutral-content">
       <ScrollToTop
         smooth
-        top="800"
+        top="500"
         width="40"
         height="18"
+        color="#fff"
         style={{
-          background: "#FC3078",
+          background: "#EB5429",
           borderRadius: "100%",
         }}
       />

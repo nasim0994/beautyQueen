@@ -26,7 +26,7 @@ const cartItem = ({ product }) => {
 
       <td className="px-6 py-4 font-medium">
         <p className="w-max">
-          ৳<span> {product.price}.00</span>
+          ৳<span> {product.price}</span>
         </p>
       </td>
 
@@ -54,7 +54,7 @@ const cartItem = ({ product }) => {
 
       <td className="px-6 py-4 font-medium">
         <p className="w-max">
-          ৳<span> {total}.00</span>
+          ৳<span> {total}</span>
         </p>
       </td>
 

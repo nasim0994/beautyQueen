@@ -30,6 +30,10 @@ h1 {
   transform: scale(1.1);
 }
 
+.active {
+  color: #eb5429;
+}
+
 @media only screen and (max-width: 1023px) {
   .scroll-to-top {
     bottom: 60px !important;
@@ -41,6 +45,15 @@ h1 {
   }
 }
 
-.active {
-  color: #ff9a21;
+.rb-tabs .rb-tabs-header .rb-tabs-items .rb-tabs-item {
+  padding: 8px 5px !important;
+}
+.rb-tabs .rb-tabs-header .rb-tabs-active-item {
+  background: #eb5429 !important;
+}
+.rb-tabs .rb-tabs-header .rb-tabs-items .rb-tabs-item.active {
+  font-weight: 400 !important;
+}
+.rb-tabs .rb-tabs-header .rb-tabs-items {
+  justify-content: start !important;
 }
