@@ -21,7 +21,7 @@ const MainHeader = () => {
         <div className="flex items-center justify-between">
           <div className="hidden lg:block">
             <Link to="/">
-              <img src={logo} alt="" className="w-32" />
+              <img src={logo} alt="" className="w-40" />
             </Link>
           </div>
           <div className="w-full lg:w-3/5">
