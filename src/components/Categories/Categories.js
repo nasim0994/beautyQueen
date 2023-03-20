@@ -1,12 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Categories.css";
-
 import { RiArrowRightSLine } from "react-icons/ri";
-import { UseContext } from "../../ContextApi/ContextProvider";
+
+import categories from "../../Data/categoryData";
 
 const Categories = () => {
-  const { categories } = UseContext();
   return (
     <div className="categories">
       <ul className="py-2">
@@ -21,24 +20,12 @@ const Categories = () => {
                 <RiArrowRightSLine className="text-lg" />
               </button>
               <div className="dropdownMenu z-20 shadow-lg">
-                <div className="grid grid-cols-3 gap-6">
-                  {item.dropdown.map((item) => (
-                    <div key={item.id}>
-                      <Link
-                        to={`/shop/${item.category}`}
-                        className="text-base font-medium"
-                      >
-                        {item.category}
+                <div>
+                  {item.dropdown.map((item, i) => (
+                    <div key={i}>
+                      <Link className="text-base font-medium hover:text-primary duration-300">
+                        {item.title}
                       </Link>
-                      <ul>
-                        {item?.items?.map((item) => (
-                          <li key={item.id} className="text-sm mt-1">
-                            <Link className="text-neutral/80 hover:text-primary duration-300">
-                              {item.title}
-                            </Link>
-                          </li>
-                        ))}
-                      </ul>
                     </div>
                   ))}
                 </div>

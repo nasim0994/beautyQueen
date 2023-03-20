@@ -2,18 +2,12 @@ import React from "react";
 import "./Shop.css";
 import ProductCard from "../../components/ProductCard/ProductCard";
 import { Link } from "react-router-dom";
-import { useQuery } from "@tanstack/react-query";
 import ShopCategories from "./ShopCategories/ShopCategories";
+import allProducts from "../../Data/allProducts.js";
+console.log(allProducts);
 
 const Shop = () => {
   window.scroll(0, 0);
-  const { data: products = [], isLoading } = useQuery({
-    queryKey: ["products"],
-    queryFn: () =>
-      fetch(`https://dummyjson.com/products?limit=100`).then((res) =>
-        res.json()
-      ),
-  });
 
   return (
     <div className="py-5">
@@ -30,15 +24,14 @@ const Shop = () => {
           </ul>
         </div>
 
-        <div className="flex gap-10 shopPage">
+        <div className="flex gap-6 shopPage">
           {/* Category */}
           <ShopCategories />
 
           {/* Products */}
-          <div className="w-full grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2">
-            {isLoading && <h1>Loading...</h1>}
-            {products.products?.map((product) => (
-              <ProductCard key={product.id} product={product} />
+          <div className="w-full grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 bg-base-100 shadow-lg rounded-md px-4">
+            {allProducts?.map((product, i) => (
+              <ProductCard key={i} product={product} />
             ))}
           </div>
         </div>

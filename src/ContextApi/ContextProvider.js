@@ -2,8 +2,6 @@ import React, { createContext, useContext, useEffect, useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { toast } from "react-toastify";
 
-import categories from "../Data/categoryData";
-
 export const Context = createContext();
 
 const ContextProvider = ({ children }) => {
@@ -152,7 +150,6 @@ const ContextProvider = ({ children }) => {
   };
 
   const contextInfo = {
-    categories,
     homeProducts,
     flashAndPopularProducts,
     isLoading,
