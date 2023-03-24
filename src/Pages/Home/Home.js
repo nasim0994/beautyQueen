@@ -6,7 +6,6 @@ import FlashSale from "../../components/FlashSale/FlashSale";
 import KidsBaby from "../../components/KidsBaby/KidsBaby";
 import MenFashion from "../../components/MenFashion/MenFashion";
 import MerchantSlider from "../../components/MerchantSlider/MerchantSlider";
-import PopularProduct from "../../components/PopularProduct/PopularProduct";
 import WomenFashion from "../../components/WomenFashion/WomenFashion";
 
 const Home = () => {
@@ -15,7 +14,6 @@ const Home = () => {
     <div>
       <Banner />
       <FlashSale />
-      <PopularProduct />
       <ChooseByBrand />
       <WomenFashion />
       <MenFashion />

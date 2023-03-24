@@ -1,11 +1,20 @@
 import React from "react";
 import { MdKeyboardArrowRight } from "react-icons/md";
-import { UseContext } from "../../ContextApi/ContextProvider";
 import ProductCard from "../ProductCard/ProductCard";
+import { useQuery } from "@tanstack/react-query";
+import { Link } from "react-router-dom";
 
 const FlashSale = () => {
   window.scroll(0, 0);
-  const { flashAndPopularProducts, isLoading } = UseContext();
+  const { data: flashSale = [], isLoading } = useQuery({
+    queryKey: ["flashSale"],
+    queryFn: () =>
+      fetch(`https://beauty-queen-server.vercel.app/flashSale?limit=5`).then(
+        (res) => res.json()
+      ),
+  });
+
+  console.log(flashSale);
   return (
     <div className="mt-6">
       <div className="w-[95%] xl:w-[1280px] mx-auto bg-base-100 p-4 rounded-lg shadow-lg">
@@ -34,17 +43,20 @@ const FlashSale = () => {
           </div>
 
           <div>
-            <button className="w-max flex items-center text-primary font-semibold hover-go ">
+            <Link
+              to="/flashSale"
+              className="w-max flex items-center text-primary font-semibold hover-go "
+            >
               <h1>Shop More</h1>
               <MdKeyboardArrowRight className="text-[22px] pt-px duration-200" />
-            </button>
+            </Link>
           </div>
         </div>
 
         {/* Product Card */}
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-2 mt-2">
           {isLoading && <h1>Loading...</h1>}
-          {flashAndPopularProducts.products?.map((product) => (
+          {flashSale?.map((product) => (
             <ProductCard key={product.id} product={product} />
           ))}
         </div>

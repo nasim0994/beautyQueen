@@ -15,6 +15,7 @@ import PointBalance from "./../Pages/AccountPage/PointBalance/PointBalance";
 import Wishlist from "../Pages/AccountPage/Wishlist/Wishlist";
 import FollowedStores from "./../Pages/AccountPage/FollowedStores/FollowedStores";
 import BecomeMerchant from "../Pages/BecomeMerchant/BecomeMerchant";
+import AllFlashSale from "./../Pages/AllFlashSale/AllFlashSale";
 
 export const router = createBrowserRouter([
   {
@@ -30,18 +31,20 @@ export const router = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: "/products",
-        element: <Home />,
-      },
-      {
-        path: "/products/:id",
+        path: "/products/:title",
         element: <ProductsDetails />,
         loader: ({ params }) =>
-          fetch(`https://dummyjson.com/products/${params.id}`),
+          fetch(
+            `https://beauty-queen-server.vercel.app/products/${params.title}`
+          ),
       },
       {
-        path: "/shop",
+        path: "/shops",
         element: <Shop />,
+      },
+      {
+        path: "/flashSale",
+        element: <AllFlashSale />,
       },
       {
         path: "/shop/:category",

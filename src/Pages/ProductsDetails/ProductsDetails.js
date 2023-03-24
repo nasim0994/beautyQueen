@@ -1,13 +1,11 @@
 import React from "react";
 import { Link, useLoaderData } from "react-router-dom";
-
 import RelatedProducts from "./RelatedProducts/RelatedProducts";
 import RightSideInfo from "./RightSideInfo/RightSideInfo";
 import ProductInfo from "./ProductInfo/ProductInfo";
 
 const ProductsDetails = () => {
   window.scroll(0, 0);
-
   const product = useLoaderData();
 
   return (
@@ -22,8 +20,8 @@ const ProductsDetails = () => {
               </Link>
             </li>
             <li>
-              <Link to="products" className="text-primary">
-                Products
+              <Link to="/shops" className="text-primary">
+                Shops
               </Link>
             </li>
             <li>{product.title}</li>

@@ -3,7 +3,8 @@ import { Link } from "react-router-dom";
 import { FaStar, FaStarHalfAlt } from "react-icons/fa";
 
 const ProductCard = ({ product }) => {
-  const { id, thumbnail, title, price, rating, discountPercentage } = product;
+  console.log(product);
+  const { thumbnail, title, price, rating, discountPercentage } = product;
   const ratingStar = Array.from({ length: 5 }, (element, index) => {
     return (
       <span key={index}>
@@ -19,7 +20,7 @@ const ProductCard = ({ product }) => {
   });
   return (
     <div className="mt-4 hover:shadow-lg rounded overflow-hidden product-card duration-300">
-      <Link to={`/products/${id}`}>
+      <Link to={`/products/${title}`}>
         <div className="overflow-hidden relative">
           <img
             src={thumbnail}
