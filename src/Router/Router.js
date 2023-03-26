@@ -4,8 +4,6 @@ import Home from "../Pages/Home/Home";
 import Cart from "./../Pages/Cart/Cart";
 import ProductsDetails from "./../Pages/ProductsDetails/ProductsDetails";
 import Shop from "../Pages/Shop/Shop";
-import CategoryProducts from "../Pages/CategoryProducts/CategoryProducts";
-
 import Account from "../Layout/Account";
 import MyProfile from "./../Pages/AccountPage/MyProfile/MyProfile";
 import MyOrders from "./../Pages/AccountPage/MyOrders/MyOrders";
@@ -39,16 +37,24 @@ export const router = createBrowserRouter([
           ),
       },
       {
-        path: "/shops",
+        path: "/category/:category",
         element: <Shop />,
+        loader: ({ params }) =>
+          fetch(
+            `https://beauty-queen-server.vercel.app/category/${params.category}`
+          ),
+      },
+      {
+        path: "/category/:category/:subCategory",
+        element: <Shop />,
+        loader: ({ params }) =>
+          fetch(
+            `https://beauty-queen-server.vercel.app/category/${params.category}/${params.subCategory}`
+          ),
       },
       {
         path: "/flashSale",
         element: <AllFlashSale />,
-      },
-      {
-        path: "/shop/:category",
-        element: <CategoryProducts />,
       },
 
       {

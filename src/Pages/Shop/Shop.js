@@ -1,19 +1,13 @@
 import React from "react";
 import "./Shop.css";
 import ProductCard from "../../components/ProductCard/ProductCard";
-import { Link } from "react-router-dom";
-import ShopCategories from "./ShopCategories/ShopCategories";
-import { useQuery } from "@tanstack/react-query";
+import { Link, useLoaderData, useParams } from "react-router-dom";
+import Categories from "./../../components/Categories/Categories";
 
 const Shop = () => {
   window.scroll(0, 0);
-  const { data: products = [], isLoading } = useQuery({
-    queryKey: ["products"],
-    queryFn: () =>
-      fetch(`https://beauty-queen-server.vercel.app/products`).then((res) =>
-        res.json()
-      ),
-  });
+  const products = useLoaderData();
+  const params = useParams();
 
   return (
     <div className="py-5">
@@ -27,16 +21,17 @@ const Shop = () => {
               </Link>
             </li>
             <li>Shops</li>
+            {params.category && <li>{params.category}</li>}
+            {params.subCategory && <li>{params.subCategory}</li>}
           </ul>
         </div>
 
         <div className="flex gap-6 shopPage">
           {/* Category */}
-          <ShopCategories />
+          <Categories />
 
           {/* Products */}
-          <div className="w-full grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 bg-base-100 shadow-lg rounded-md px-4">
-            {isLoading && <h2>Loading...</h2>}
+          <div className="w-full  grid items-start grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 bg-base-100 shadow-lg rounded-md px-4">
             {products?.map((product, i) => (
               <ProductCard key={i} product={product} />
             ))}

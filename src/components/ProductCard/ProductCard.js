@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { FaStar, FaStarHalfAlt } from "react-icons/fa";
 
 const ProductCard = ({ product }) => {
-  console.log(product);
   const { thumbnail, title, price, rating, discountPercentage } = product;
   const ratingStar = Array.from({ length: 5 }, (element, index) => {
     return (

@@ -18,7 +18,7 @@ const Banner = () => {
       <div className="w-[90] xl:w-[1280px] mx-auto h-full">
         <div className="lg:flex flex-row-reverse gap-4 h-full">
           {/* Slider */}
-          <div className="lg:w-[75%] xl:w-[80%]">
+          <div className="w-[100%]">
             <Swiper
               spaceBetween={30}
               loop={true}
@@ -50,16 +50,6 @@ const Banner = () => {
                 />
               </SwiperSlide>
             </Swiper>
-          </div>
-
-          {/* CAtegories */}
-          <div className="lg:w-[25%] xl:w-[20%] bg-base-100 min-h-full z-30 rounded">
-            <div className="hidden lg:block ">
-              <Categories />
-            </div>
-            <div className="lg:hidden">
-              <MobileCategories />
-            </div>
           </div>
         </div>
       </div>
