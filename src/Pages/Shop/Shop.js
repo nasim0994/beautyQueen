@@ -20,7 +20,11 @@ const Shop = () => {
                 Home
               </Link>
             </li>
-            <li>Shops</li>
+            <li>
+              <Link to="/shops" className="text-primary">
+                Shops
+              </Link>
+            </li>
             {params.category && <li>{params.category}</li>}
             {params.subCategory && <li>{params.subCategory}</li>}
           </ul>
@@ -31,7 +35,7 @@ const Shop = () => {
           <Categories />
 
           {/* Products */}
-          <div className="w-full  grid items-start grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 bg-base-100 shadow-lg rounded-md px-4">
+          <div className="w-full grid items-start grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 bg-base-100 shadow-lg rounded-md px-4">
             {products?.map((product, i) => (
               <ProductCard key={i} product={product} />
             ))}

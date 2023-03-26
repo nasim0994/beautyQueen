@@ -20,13 +20,13 @@ const TopHeader = () => {
     });
   }, []);
   return (
-    <div className="hidden lg:block py-2 border-b bg-gray-50">
-      <div className="w-[95%] xl:w-[1280px] mx-auto text-neutral">
+    <div className="hidden lg:block py-2 border-b bg-primary">
+      <div className="w-[95%] xl:w-[1280px] mx-auto text-gray-200 font-medium">
         <div className="flex justify-between items-center text-[13px]">
           <div className="flex items-center">
             <Link
               to="tel: 01706260994"
-              className="flex items-center gap-2 hover:text-primary duration-300"
+              className="flex items-center gap-2 hover:text-gray-50"
             >
               <BsTelephoneInbound />
               <p>01531714355</p>
@@ -34,7 +34,7 @@ const TopHeader = () => {
             <div className="divider divider-horizontal mx-1"></div>
             <Link
               to="mailto: abc@example.com"
-              className="flex items-center gap-2 hover:text-primary duration-300"
+              className="flex items-center gap-2 hover:text-gray-50"
             >
               <MdOutlineMail className="text-base" />
               <p>beautyqueen@gmail.com</p>
@@ -44,7 +44,7 @@ const TopHeader = () => {
             <div className="relative" id="topAccount">
               <button
                 onClick={() => setAccountDropdown(!accountDropdown)}
-                className="flex items-center gap-1 hover:text-primary duration-300"
+                className="flex items-center gap-1 hover:text-gray-50"
               >
                 <img
                   src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgBhcplevwUKGRs1P-Ps8Mwf2wOwnW_R_JIA&usqp=CAU"
@@ -114,7 +114,7 @@ const TopHeader = () => {
                 <label
                   onClick={() => setFormToggle("signup")}
                   htmlFor="signUpIn"
-                  className="hover:text-primary duration-300 cursor-pointer"
+                  className="hover:text-gray-50 cursor-pointer"
                 >
                   Signup
                 </label>
@@ -129,7 +129,7 @@ const TopHeader = () => {
                 <label
                   onClick={() => setFormToggle("login")}
                   htmlFor="signUpIn"
-                  className="border border-neutral px-6 py-1.5 rounded-md hover:border-primary hover:text-base-100 hover:bg-primary duration-500 cursor-pointer"
+                  className="border border-base-100 px-6 py-1.5 rounded-md hover:border-primary hover:text-neutral hover:bg-base-100 duration-500 cursor-pointer"
                 >
                   Login
                 </label>

@@ -31,7 +31,7 @@ const MainHeader = () => {
                 placeholder="search Product..."
                 className="border w-full px-3 py-2 rounded outline-none"
               />
-              <span className="absolute right-2  top-2.5 text-xl text-neutral/60">
+              <span className="absolute right-2  top-2.5 text-xl text-primary">
                 <BsSearch />
               </span>
             </div>

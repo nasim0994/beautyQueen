@@ -14,7 +14,6 @@ const FlashSale = () => {
       ),
   });
 
-  console.log(flashSale);
   return (
     <div className="mt-6">
       <div className="w-[95%] xl:w-[1280px] mx-auto bg-base-100 p-4 rounded-lg shadow-lg">

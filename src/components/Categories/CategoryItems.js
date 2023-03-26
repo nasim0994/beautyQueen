@@ -8,6 +8,8 @@ const CategoryItems = ({ category }) => {
   useEffect(() => {
     if (category.title === params.category) {
       setDropdownToggle(true);
+    } else {
+      setDropdownToggle(false);
     }
   }, [category.title, params.category]);
 
@@ -31,8 +33,13 @@ const CategoryItems = ({ category }) => {
             }`}
           >
             {category.dropdown.map((subCategory) => (
-              <li className="p-1 hover:text-primary duration-300">
-                <Link to={`/category/${category.title}/${subCategory.title}`}>
+              <li className="hover:text-primary duration-300 hover:bg-gray-100 p-1 rounded">
+                <Link
+                  to={`/category/${category.title}/${subCategory.title}`}
+                  className={`block ${
+                    params.subCategory === subCategory.title && "text-primary"
+                  }`}
+                >
                   {subCategory.title}
                 </Link>
               </li>

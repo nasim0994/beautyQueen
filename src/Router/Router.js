@@ -37,6 +37,11 @@ export const router = createBrowserRouter([
           ),
       },
       {
+        path: "/shops",
+        element: <Shop />,
+        loader: () => fetch(`https://beauty-queen-server.vercel.app/products`),
+      },
+      {
         path: "/category/:category",
         element: <Shop />,
         loader: ({ params }) =>

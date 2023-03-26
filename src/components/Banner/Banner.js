@@ -3,11 +3,6 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper.min.css";
 import { Autoplay } from "swiper";
 import banner1 from "../../Images/banner1.jpg";
-import banner2 from "../../Images/banner2.png";
-import banner3 from "../../Images/banner3.jpg";
-
-import Categories from "../Categories/Categories";
-import MobileCategories from "../Categories/MobileCategories";
 
 const Banner = () => {
   return (
@@ -37,14 +32,14 @@ const Banner = () => {
               </SwiperSlide>
               <SwiperSlide>
                 <img
-                  src={banner2}
+                  src="https://images.shajgoj.com/wp-content/uploads/2023/01/Web-banner-coupon-Free-delivery-2.jpg"
                   alt=""
                   className="h-72 lg:h-full w-full rounded"
                 />
               </SwiperSlide>
               <SwiperSlide>
                 <img
-                  src={banner3}
+                  src="https://images.shajgoj.com/wp-content/uploads/2023/03/Website-Slider-Free-Glow-Booster-1920x490.jpg"
                   alt=""
                   className="h-72 lg:h-full w-full rounded"
                 />
