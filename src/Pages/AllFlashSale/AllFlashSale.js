@@ -16,38 +16,34 @@ const AllFlashSale = () => {
     <div className="py-5">
       <div className="w-[95%] xl:w-[1280px] mx-auto">
         {/* Path */}
-        <div className="text-sm breadcrumbs mb-4">
-          <ul>
+        <div className="text-sm breadcrumbs mb-4 sm:flex gap-8 items-center">
+          <ul className="mb-2 sm:mb-0">
             <li>
               <Link to="/" className="text-primary">
                 Home
               </Link>
             </li>
             <li>
-              <div className="sm:flex gap-8 items-center">
-                <h1 className="text-xl font-semibold text-neutral mb-2 sm:mb-0">
-                  FlashSale
-                </h1>
-
-                <div className="w-max flex gap-2 items-center">
-                  <p className="text-primary">End in</p>
-                  <div className="flex gap-2 items-center">
-                    <span className="bg-primary w-8 h-8 flex justify-center items-center text-base-100 rounded">
-                      10
-                    </span>
-                    <span>:</span>
-                    <span className="bg-primary w-8 h-8 flex justify-center items-center text-base-100 rounded">
-                      25
-                    </span>
-                    <span>:</span>
-                    <span className="bg-primary w-8 h-8 flex justify-center items-center text-base-100 rounded">
-                      15
-                    </span>
-                  </div>
-                </div>
-              </div>
+              <h1 className="text-lg font-semibold text-neutral">FlashSale</h1>
             </li>
           </ul>
+
+          <div className="w-max flex gap-2 items-center">
+            <p className="text-primary">End in</p>
+            <div className="flex gap-2 items-center">
+              <span className="bg-primary w-8 h-8 flex justify-center items-center text-base-100 rounded">
+                10
+              </span>
+              <span>:</span>
+              <span className="bg-primary w-8 h-8 flex justify-center items-center text-base-100 rounded">
+                25
+              </span>
+              <span>:</span>
+              <span className="bg-primary w-8 h-8 flex justify-center items-center text-base-100 rounded">
+                15
+              </span>
+            </div>
+          </div>
         </div>
 
         <div className="flex gap-6 shopPage">
