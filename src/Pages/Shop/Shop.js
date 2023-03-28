@@ -3,11 +3,12 @@ import "./Shop.css";
 import ProductCard from "../../components/ProductCard/ProductCard";
 import { Link, useLoaderData, useParams } from "react-router-dom";
 import Categories from "./../../components/Categories/Categories";
+import { useQuery } from "@tanstack/react-query";
 
 const Shop = () => {
   window.scroll(0, 0);
+  const { category, subCategory } = useParams();
   const products = useLoaderData();
-  const params = useParams();
 
   return (
     <div className="py-5">
@@ -25,8 +26,8 @@ const Shop = () => {
                 Shops
               </Link>
             </li>
-            {params.category && <li>{params.category}</li>}
-            {params.subCategory && <li>{params.subCategory}</li>}
+            {category && <li>{category}</li>}
+            {subCategory && <li>{subCategory}</li>}
           </ul>
         </div>
 

@@ -10,3 +10,9 @@
   max-height: max-content;
   display: block;
 }
+.category-wrap::-webkit-scrollbar {
+  width: 3px;
+}
+.category-wrap::-webkit-scrollbar-thumb {
+  background: #ddd;
+}

@@ -1,9 +1,9 @@
 import React from "react";
 import "./Home.css";
-import Banner from "../../components/Banner/Banner";
-import ChooseByCategory from "../../components/ChooseByCategory/ChooseByCategory";
-import FlashSale from "../../components/FlashSale/FlashSale";
-import MerchantSlider from "../../components/MerchantSlider/MerchantSlider";
+import Banner from "../../components/HomeComponents/Banner/Banner";
+import ChooseByCategory from "../../components/HomeComponents/ChooseByCategory/ChooseByCategory";
+import FlashSale from "../../components/HomeComponents/FlashSale/FlashSale";
+import ShopBanner from "../../components/HomeComponents/ShopBanner/ShopBanner";
 
 const Home = () => {
   window.scroll(0, 0);
@@ -12,8 +12,7 @@ const Home = () => {
       <Banner />
       <ChooseByCategory />
       <FlashSale />
-
-      <MerchantSlider />
+      <ShopBanner />
     </div>
   );
 };

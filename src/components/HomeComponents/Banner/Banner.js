@@ -2,7 +2,7 @@ import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper.min.css";
 import { Autoplay } from "swiper";
-import banner1 from "../../Images/banner1.jpg";
+import banner1 from "../../../Images/banner1.jpg";
 
 const Banner = () => {
   return (
@@ -10,7 +10,7 @@ const Banner = () => {
       className="bg-[url('https://tailwindmaxui.netlify.app/static/media/installation.50c59fdd.9713bc44d9403301b053.jpg')] bg-no-repeat bg-cover py-2 lg:h-[450px]"
       id="banner"
     >
-      <div className="w-[90] xl:w-[1280px] mx-auto h-full">
+      <div className="w-[95%] xl:w-[1280px] mx-auto h-full">
         <div className="lg:flex flex-row-reverse gap-4 h-full">
           {/* Slider */}
           <div className="w-[100%]">

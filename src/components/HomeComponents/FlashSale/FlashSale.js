@@ -1,6 +1,6 @@
 import React from "react";
 import { MdKeyboardArrowRight } from "react-icons/md";
-import ProductCard from "../ProductCard/ProductCard";
+import ProductCard from "../../ProductCard/ProductCard";
 import { useQuery } from "@tanstack/react-query";
 import { Link } from "react-router-dom";
 

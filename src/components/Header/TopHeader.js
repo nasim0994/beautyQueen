@@ -20,7 +20,7 @@ const TopHeader = () => {
     });
   }, []);
   return (
-    <div className="hidden lg:block py-2 border-b bg-primary">
+    <div className="hidden lg:block py-3 border-b bg-primary">
       <div className="w-[95%] xl:w-[1280px] mx-auto text-gray-200 font-medium">
         <div className="flex justify-between items-center text-[13px]">
           <div className="flex items-center">
@@ -41,7 +41,7 @@ const TopHeader = () => {
             </Link>
           </div>
           <div className="flex items-center gap-6">
-            <div className="relative" id="topAccount">
+            <div className="relative hidden" id="topAccount">
               <button
                 onClick={() => setAccountDropdown(!accountDropdown)}
                 className="flex items-center gap-1 hover:text-gray-50"
@@ -112,26 +112,11 @@ const TopHeader = () => {
             <ul className="flex gap-6 items-center font-medium ">
               <li>
                 <label
-                  onClick={() => setFormToggle("signup")}
-                  htmlFor="signUpIn"
-                  className="hover:text-gray-50 cursor-pointer"
-                >
-                  Signup
-                </label>
-
-                <SignUpInModal
-                  formToggle={formToggle}
-                  setFormToggle={setFormToggle}
-                />
-              </li>
-
-              <li>
-                <label
                   onClick={() => setFormToggle("login")}
                   htmlFor="signUpIn"
-                  className="border border-base-100 px-6 py-1.5 rounded-md hover:border-primary hover:text-neutral hover:bg-base-100 duration-500 cursor-pointer"
+                  className="px-6 py-1.5 rounded-md cursor-pointer"
                 >
-                  Login
+                  Login / Signup
                 </label>
 
                 <SignUpInModal
