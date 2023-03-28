@@ -5,13 +5,14 @@ import { toast } from "react-toastify";
 export const Context = createContext();
 
 const ContextProvider = ({ children }) => {
-  const { data: homeProducts = [], isLoading } = useQuery({
+  const { data: products = [], isLoading } = useQuery({
     queryKey: [""],
     queryFn: () =>
-      fetch(`https://dummyjson.com/products?limit=10`).then((res) =>
+      fetch(`https://beauty-queen-server.vercel.app/products`).then((res) =>
         res.json()
       ),
   });
+
   const { data: flashAndPopularProducts = [] } = useQuery({
     queryKey: ["relatedProducts"],
     queryFn: () =>
@@ -150,7 +151,7 @@ const ContextProvider = ({ children }) => {
   };
 
   const contextInfo = {
-    homeProducts,
+    products,
     flashAndPopularProducts,
     isLoading,
     handelAddToCart,

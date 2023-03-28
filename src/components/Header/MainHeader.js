@@ -5,6 +5,8 @@ import { BsSearch } from "react-icons/bs";
 import { RiShoppingCartLine } from "react-icons/ri";
 import { FiHeart } from "react-icons/fi";
 import { UseContext } from "../../ContextApi/ContextProvider";
+import { useState } from "react";
+import { useEffect } from "react";
 
 const MainHeader = () => {
   const { cart } = UseContext();
@@ -15,6 +17,29 @@ const MainHeader = () => {
         parseInt(item.price - (item.price * item.discountPercentage) / 100),
     0
   );
+
+  const [searchDropdown, setSearchDropdown] = useState(false);
+  const [searchText, setSearchText] = useState("");
+  const [products, setProducts] = useState([]);
+  useEffect(() => {
+    fetch(`https://beauty-queen-server.vercel.app/products`)
+      .then((res) => res.json())
+      .then((data) => {
+        const product = data.filter((product) =>
+          product.title.toLowerCase().includes(searchText.toLowerCase())
+        );
+        setProducts(product);
+      });
+  }, [searchText]);
+
+  useEffect(() => {
+    document.addEventListener("click", (e) => {
+      if (!e.target.closest(".searchInput")) {
+        setSearchDropdown(false);
+      }
+    });
+  }, []);
+
   return (
     <div className="py-2 text-neutral shadow sticky top-0 z-40 lg:bg-[#ffffffcc] lg:backdrop-blur-[30px] backdrop-saturate-[200%]">
       <div className="w-[95%] xl:w-[1280px] mx-auto">
@@ -28,12 +53,39 @@ const MainHeader = () => {
             <div className="relative">
               <input
                 type="text"
+                onChange={(e) => setSearchText(e.target.value)}
+                onClick={() => setSearchDropdown(true)}
                 placeholder="search Product..."
-                className="border w-full px-3 py-2 rounded outline-none"
+                className="searchInput border w-full px-3 py-2 rounded outline-none"
               />
               <span className="absolute right-2  top-2.5 text-xl text-primary">
                 <BsSearch />
               </span>
+
+              {searchDropdown && (
+                <div className="searchDropdown absolute w-full bg-base-100 p-4 shadow-lg max-h-96 overflow-y-auto">
+                  <ul>
+                    {products?.map((product) => (
+                      <li
+                        onClick={() => setSearchDropdown(false)}
+                        className="hover:bg-gray-100 p-1"
+                      >
+                        <Link
+                          to={`/products/${product.title}`}
+                          className="flex gap-2 items-center"
+                        >
+                          <img
+                            src={product.thumbnail}
+                            alt=""
+                            className="w-12"
+                          />
+                          <h6>{product.title}</h6>
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
             </div>
           </div>
           <div className="hidden lg:flex gap-6 items-center">

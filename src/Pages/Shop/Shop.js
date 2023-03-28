@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Shop.css";
 import ProductCard from "../../components/ProductCard/ProductCard";
 import { Link, useLoaderData, useParams } from "react-router-dom";
@@ -7,8 +7,23 @@ import { useQuery } from "@tanstack/react-query";
 
 const Shop = () => {
   window.scroll(0, 0);
+  const [products, setProducts] = useState([]);
   const { category, subCategory } = useParams();
-  const products = useLoaderData();
+
+  let query = "";
+  if (category && !subCategory) {
+    query = `category/${category}`;
+  } else if (category && subCategory) {
+    query = `category/${category}/${subCategory}`;
+  } else {
+    query = "products";
+  }
+
+  useEffect(() => {
+    fetch(`https://beauty-queen-server.vercel.app/${query}`)
+      .then((res) => res.json())
+      .then((data) => setProducts(data));
+  }, [query]);
 
   return (
     <div className="py-5">
@@ -26,7 +41,13 @@ const Shop = () => {
                 Shops
               </Link>
             </li>
-            {category && <li>{category}</li>}
+            {category && (
+              <li>
+                <Link to={`/category/${category}`} className="text-primary">
+                  {category}
+                </Link>
+              </li>
+            )}
             {subCategory && <li>{subCategory}</li>}
           </ul>
         </div>
