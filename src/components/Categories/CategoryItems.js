@@ -29,7 +29,7 @@ const CategoryItems = ({ category }) => {
         <nav>
           <ul
             className={`w-full pl-2 text-neutral/80 dropdown ${
-              dropdownToggle && "dropdownShow "
+              dropdownToggle && "dropdownShow"
             }`}
           >
             {category.dropdown.map((subCategory) => (

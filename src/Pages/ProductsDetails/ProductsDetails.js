@@ -3,10 +3,13 @@ import { Link, useLoaderData } from "react-router-dom";
 import RelatedProducts from "./RelatedProducts/RelatedProducts";
 import RightSideInfo from "./RightSideInfo/RightSideInfo";
 import ProductInfo from "./ProductInfo/ProductInfo";
+import parcer from "html-react-parser";
+
 
 const ProductsDetails = () => {
   window.scroll(0, 0);
   const product = useLoaderData();
+  const parcerDescription = parcer(product.description);
 
   return (
     <div className="py-2">
@@ -24,7 +27,7 @@ const ProductsDetails = () => {
                 Shops
               </Link>
             </li>
-            <li>{product.title}</li>
+            <li>{product?.title}</li>
           </ul>
         </div>
 
@@ -42,16 +45,14 @@ const ProductsDetails = () => {
         {/* Details */}
         <div className="bg-base-100 shadow-lg p-4 rounded mt-6">
           <h1 className="font-semibold text-lg">
-            Product Description of {product.title}
+            Product Description of {product?.title}
           </h1>
 
-          <div className="mt-3 pl-2">
-            <p>{product.description}</p>
-          </div>
+          <div className="mt-3 pl-2">{parcerDescription}</div>
         </div>
 
         {/* Related Products */}
-        <RelatedProducts category={product.category} />
+        <RelatedProducts category={product?.category} />
       </div>
     </div>
   );

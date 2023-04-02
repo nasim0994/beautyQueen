@@ -5,7 +5,6 @@ import Clothing from "../Images/categories-logo/clothing.jpeg";
 
 const categoryData = [
   {
-    id: 1,
     title: "Personal care",
     icon: PersonalCare,
     dropdown: [
@@ -25,7 +24,6 @@ const categoryData = [
   },
 
   {
-    id: 2,
     title: "Mom & Baby",
     icon: MomBaby,
     dropdown: [
@@ -45,7 +43,6 @@ const categoryData = [
   },
 
   {
-    id: 3,
     title: "Clothing",
     icon: Clothing,
     dropdown: [
@@ -71,7 +68,6 @@ const categoryData = [
   },
 
   {
-    id: 3,
     title: "Accessories",
     link: "/",
     icon: Accessories,

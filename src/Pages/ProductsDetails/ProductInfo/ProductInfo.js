@@ -9,13 +9,13 @@ import { FaOpencart, FaStar, FaStarHalfAlt } from "react-icons/fa";
 const ProductInfo = ({ product }) => {
   const {
     thumbnail,
-    images,
     title,
     rating,
     price,
     brand,
     category,
     discountPercentage,
+    size,
   } = product;
 
   //Import function to context api
@@ -44,16 +44,19 @@ const ProductInfo = ({ product }) => {
   });
 
   // cart Product find
-  const [cartProduct, setCartProduct] = useState({});
+  const [cartProduct, setCartProduct] = useState(null);
+
   useEffect(() => {
-    const exited = cart?.find((item) => item.id === product.id);
+    const exited = cart?.find((item) => item._id === product._id);
     setCartProduct(exited);
   }, [product, cart]);
+
+  console.log(cart);
 
   // wishlist Product find
   const [wishlistProduct, setWishlistProduct] = useState({});
   useEffect(() => {
-    const exited = wishlist?.find((item) => item.id === product.id);
+    const exited = wishlist?.find((item) => item._id === product._id);
     setWishlistProduct(exited);
   }, [product, wishlist]);
 
@@ -72,14 +75,6 @@ const ProductInfo = ({ product }) => {
           <div className="absolute top-1 text-base-100 right-0 bg-red-600 w-max rounded-l-full px-2 py-px">
             <p>{discountPercentage}%</p>
           </div>
-        </div>
-
-        <div className="flex gap-2 mt-4">
-          {images.map((img, i) => (
-            <button key={i}>
-              <img src={img} alt="" className="w-20 h-20 border p-2 rounded" />
-            </button>
-          ))}
         </div>
       </div>
 
@@ -130,30 +125,25 @@ const ProductInfo = ({ product }) => {
         </div>
 
         {/* Size */}
-        <div className="flex gap-4 items-center">
-          <p>Size:</p>
+        {size && (
+          <div className="flex gap-4 items-center">
+            <p>Size:</p>
 
-          <div className="flex gap-2 items-center">
-            <button className="py-2 px-3 rounded border scale-[.96] hover:scale-[1] hover:border-neutral duration-300">
-              38
-            </button>
-            <button className="py-2 px-3 rounded border scale-[.96] hover:scale-[1] hover:border-neutral duration-300">
-              40
-            </button>
-            <button className="py-2 px-3 rounded border scale-[.96] hover:scale-[1] hover:border-neutral duration-300">
-              42
-            </button>
-            <button className="py-2 px-3 rounded border scale-[.96] hover:scale-[1] hover:border-neutral duration-300">
-              44
-            </button>
+            <div className="flex gap-2 items-center">
+              {size?.map((size) => (
+                <button className="py-2 px-3 rounded border scale-[.96] hover:scale-[1] hover:border-neutral duration-300">
+                  {size.value}
+                </button>
+              ))}
+            </div>
           </div>
-        </div>
+        )}
 
         {/* Buttons */}
         <div className="flex gap-4 items-center mt-6">
-          <button className="w-40 bg-primary text-base-100 px-2 py-1.5 rounded flex items-center gap-1 justify-center scale-[.97] hover:scale-[1] duration-300">
+          {/* <button className="w-40 bg-primary text-base-100 px-2 py-1.5 rounded flex items-center gap-1 justify-center scale-[.97] hover:scale-[1] duration-300">
             Buy Now
-          </button>
+          </button> */}
 
           {cartProduct ? (
             <div className="w-40 bg-primary px-2 py-1.5 text-base-100 rounded flex justify-between gap-3">

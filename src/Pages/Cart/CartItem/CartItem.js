@@ -18,8 +18,12 @@ const cartItem = ({ product }) => {
             alt="Apple Watch"
             className="w-14 h-14 rounded-full"
           />
-          <Link to={`/products/${product.id}`}>
-            <h3 className="text-lg text-neutral">{product.title}</h3>
+          <Link to={`/products/${product.title}`}>
+            <h3 className="text-lg text-neutral">
+              {product.title.length > 30
+                ? `${product.title.slice(0, 30)}...`
+                : product.title}
+            </h3>
           </Link>
         </div>
       </td>
